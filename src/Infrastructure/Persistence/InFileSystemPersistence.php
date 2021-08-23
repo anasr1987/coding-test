@@ -57,4 +57,22 @@ final class InFileSystemPersistence
         return $picturesByAd;
     }
 
+    public function getPicturesByAdJson($ad)
+    {
+        $picturesByAdJson = [];
+
+        /** @var Picture $picture */
+        foreach ($this->getPictures() as $picture){
+            /** @var Ad $ad */
+            if(in_array($picture->getId(), $ad->getPictures())){
+                $picturesByAdJson[] = [
+                    'id' => $picture->getId(),
+                    'url' => $picture->getUrl(),
+                    'quality' => $picture->getQuality(),
+                ];
+            }
+        }
+        return $picturesByAdJson;
+    }
+
 }

@@ -136,7 +136,6 @@ final class CalculateScoreManager
     public function calculateScoreDescriptionByWords($ad)
     {
         $score = 0;
-        $times = 0;
 
         /** @var Ad $ad */
         //Que las siguientes palabras aparezcan en la descripción añaden 5 puntos cada una: Luminoso, Nuevo, Céntrico, Reformado, Ático.

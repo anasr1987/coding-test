@@ -34,7 +34,7 @@ final class CalculateScoreController extends AbstractController
                 'id' => $ad->getId(),
                 'typology' => $ad->getTypology(),
                 'description' => $ad->getDescription(),
-                'pictures' => $ad->getPictures(),
+                'pictures' => $list->getPicturesByAdJson($ad),
                 'houseSize' => $ad->getHouseSize(),
                 'gardenSize' => $ad->getGardenSize(),
                 'score' => $ad->getScore(),
